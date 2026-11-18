@@ -1,0 +1,36 @@
+/* Il box model comprende padding e bordi nelle dimensioni degli elementi. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 8px 16px;
+    border-bottom: 2px solid black;
+}
+
+/* Margini automatici per centrare la colonna; padding per distanziare le card dai lati. */
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px 32px;
+}
+
+/* Le card possono crescere se il testo richiede più spazio. */
+article {
+    min-height: 160px;
+    padding: 16px;
+    border: 2px solid black;
+    margin-bottom: 16px;
+}
+
+/* Il padding del main fornisce già lo spazio prima del footer. */
+article:last-child {
+    margin-bottom: 0;
+}
+
+footer {
+    padding: 8px 16px;
+    border-top: 2px solid black;
+}
