@@ -8,3 +8,7 @@ Immagini di prodotto utilizzate per l'esercizio didattico Bass Collection.
 - `dingwall-d-roc-5-vintage-burst.jpg`: [Dingwall, D-Roc Standard](https://dingwallguitars.com/bass/d-roc-standard/).
 
 I diritti sulle fotografie appartengono ai rispettivi titolari.
+
+- `dingwall-d-roc-5-vintage-burst-white.png`: elaborazione con AI della foto Dingwall sopra indicata, con sfondo bianco e inquadratura orizzontale più stretta. L’originale è conservato nella cartella.
+
+Le due foto DarkRay sono scaricate dal CDN ufficiale Music Man in formato PNG da 1800 × 660 pixel. Il CSS ritaglia i margini vuoti verticali per riempire il riquadro 3:1.
