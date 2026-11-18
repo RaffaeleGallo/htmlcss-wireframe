@@ -26,9 +26,12 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Colonna centrata, con spazio ai lati anche sugli schermi piccoli. */
+/* Mobile first: una colonna come impostazione di base. */
 main {
-    max-width: 600px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 20px 16px;
 }
@@ -36,28 +39,24 @@ main {
 /* L'altezza minima lascia crescere le card quando il testo va a capo. */
 article {
     min-height: 200px;
-    margin-bottom: 16px;
+    min-width: 0;
+    overflow-wrap: break-word;
     padding: 16px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 6px;
 }
 
-article:last-child {
-    margin-bottom: 0;
-}
-
 .card-heading {
     margin-bottom: 12px;
 }
 
-/* Immagine e titolo affiancati senza Flexbox o Grid. */
+/* Una fascia orizzontale uniforme mostra tutto lo strumento. */
 .card-heading img {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin-right: 12px;
-    vertical-align: middle;
+    display: block;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 16px;
     object-fit: contain;
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -65,10 +64,7 @@ article:last-child {
 }
 
 .card-heading h2 {
-    display: inline-block;
-    /* Riserviamo spazio all'immagine, al margine e allo spazio tra i tag. */
-    width: calc(100% - 100px);
-    vertical-align: middle;
+    /* Il titolo usa tutta la larghezza e va a capo naturalmente. */
     font-size: 18px;
     line-height: 1.3;
 }
@@ -80,4 +76,24 @@ footer {
     text-align: center;
     font-size: 12px;
     border-radius: 6px 6px 0 0;
+}
+
+/* Da 768px: due card per riga, adatte a tablet e finestre intermedie. */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 28px 24px;
+        gap: 24px;
+    }
+
+    article {
+        padding: 20px;
+    }
+}
+
+/* Da 1200px: quattro card per riga sui desktop ampi. */
+@media (min-width: 1200px) {
+    main {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
