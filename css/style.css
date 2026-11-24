@@ -54,9 +54,11 @@ main > article {
     border-radius: 6px;
 }
 
-/* :hover si attiva quando il puntatore è sopra una scheda.
-   Il bordo passa da azzurro a blu scuro. */
-main > article:hover {
+/* :hover descrive lo stato della scheda sotto il puntatore.
+   La virgola raggruppa due selettori: la scheda e la sua immagine interna.
+   Entrambi i bordi diventano blu scuro, anche passando sopra il testo. */
+main > article:hover,
+main > article:hover .card-heading > img {
     border-color: #2c3e50;
 }
 
