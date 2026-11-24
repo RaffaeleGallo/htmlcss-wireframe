@@ -106,6 +106,14 @@ main > article:focus-within .card-heading > img {
     text-decoration: underline;
 }
 
+/* ::after genera un dettaglio visivo dopo il testo del link.
+   content specifica il simbolo: non serve aggiungerlo in ogni tag HTML. */
+.product-link::after {
+    content: "→";
+    display: inline-block;
+    margin-left: 6px;
+}
+
 /* :visited distingue i collegamenti che il browser considera già visitati.
    Usiamo solo il colore; il riconoscimento dipende dalla cronologia del browser. */
 .product-link:visited {
