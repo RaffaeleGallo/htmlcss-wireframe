@@ -94,6 +94,23 @@ main > article:hover .card-heading > img {
     line-height: 1.3;
 }
 
+/* Un link con href è raggiungibile da tastiera con Tab. */
+.product-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px 0;
+    color: #246580;
+    text-decoration: underline;
+}
+
+/* :focus identifica il link che riceve l'input da tastiera.
+   L'outline lo evidenzia senza spostare il contenuto della scheda. */
+.product-link:focus {
+    outline: 3px solid #246580;
+    outline-offset: 4px;
+    background-color: #e8f4fa;
+}
+
 footer {
     /* Assorbe lo spazio libero: il footer resta in basso senza coprire le card. */
     margin-top: auto;
