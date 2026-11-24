@@ -78,11 +78,11 @@ main > article:hover {
     border-radius: 4px;
 }
 
-/* Selettore per attributo: *= significa "contiene".
-   Seleziona le immagini figlie dirette di .card-heading il cui src contiene
-   "darkray": in questa pagina sono le foto DarkRay 4 e DarkRay 5.
+/* Selettore per attributo: ^= significa "inizia con".
+   Il valore di src deve cominciare esattamente con "images/darkray-".
+   Seleziona le due foto DarkRay; non basta avere "darkray" altrove nel percorso.
    Il ritaglio elimina solo i margini vuoti sopra e sotto. */
-.card-heading > img[src*="darkray"] {
+.card-heading > img[src^="images/darkray-"] {
     object-fit: cover;
 }
 
