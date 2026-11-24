@@ -103,6 +103,12 @@ main > article:hover .card-heading > img {
     text-decoration: underline;
 }
 
+/* :visited distingue i collegamenti che il browser considera già visitati.
+   Usiamo solo il colore; il riconoscimento dipende dalla cronologia del browser. */
+.product-link:visited {
+    color: #704080;
+}
+
 /* :focus identifica il link che riceve l'input da tastiera.
    L'outline lo evidenzia senza spostare il contenuto della scheda. */
 .product-link:focus {
