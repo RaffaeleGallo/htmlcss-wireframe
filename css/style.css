@@ -50,18 +50,12 @@ main > article {
     overflow-wrap: break-word;
     padding: 16px;
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    border: 1px solid #3185a6;
     border-radius: 6px;
 }
 
-/* :first-child seleziona la scheda che è il primo elemento dentro main.
-   Attualmente è il Fender; cambiando l'ordine, il bordo segue la prima scheda. */
-main > article:first-child {
-    border-color: #3185a6;
-}
-
 /* :hover si attiva quando il puntatore è sopra una scheda.
-   A parità di specificità, questa regola successiva prevale anche sulla prima. */
+   Il bordo passa da azzurro a blu scuro. */
 main > article:hover {
     border-color: #2c3e50;
 }
@@ -90,6 +84,12 @@ main > article:hover {
    Il ritaglio elimina solo i margini vuoti sopra e sotto. */
 .card-heading > img[src*="darkray"] {
     object-fit: cover;
+}
+
+/* Selettore per attributo: = richiede il valore esatto di src.
+   Evidenzia il riquadro della foto Fender; non il bordo dell'intera scheda. */
+.card-heading > img[src="images/fender-jazz-bass-maui-blue.jpg"] {
+    border-color: #3185a6;
 }
 
 .card-heading h2 {
