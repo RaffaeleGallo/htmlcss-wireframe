@@ -33,6 +33,8 @@ h1 {
 
 /* Mobile first: una colonna come impostazione di base. */
 main {
+    /* Inizializza il contatore delle schede a zero. */
+    counter-reset: bass;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
@@ -45,6 +47,8 @@ main {
 /* > seleziona solo gli article figli diretti di main: le quattro schede.
    L'altezza minima lascia crescere le card quando il testo va a capo. */
 main > article {
+    /* Ogni scheda aumenta il contatore di uno. */
+    counter-increment: bass;
     min-height: 200px;
     min-width: 0;
     overflow-wrap: break-word;
@@ -95,6 +99,13 @@ main > article:focus-within .card-heading > img {
     /* Il titolo usa tutta la larghezza e va a capo naturalmente. */
     font-size: 18px;
     line-height: 1.3;
+}
+
+/* ::before mostra il numero prima del titolo, seguendo l'ordine dell'HTML.
+   decimal-leading-zero produce 01, 02, 03... */
+.card-heading > h2::before {
+    content: counter(bass, decimal-leading-zero) " · ";
+    color: #246580;
 }
 
 /* Un link con href è raggiungibile da tastiera con Tab. */
