@@ -74,7 +74,7 @@ main > article:hover {
     margin-bottom: 16px;
     object-fit: contain;
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    border: 1px solid #3185a6;
     border-radius: 4px;
 }
 
@@ -84,12 +84,6 @@ main > article:hover {
    Il ritaglio elimina solo i margini vuoti sopra e sotto. */
 .card-heading > img[src^="images/darkray-"] {
     object-fit: cover;
-}
-
-/* Selettore per attributo: = richiede il valore esatto di src.
-   Evidenzia il riquadro della foto Fender; non il bordo dell'intera scheda. */
-.card-heading > img[src="images/fender-jazz-bass-maui-blue.jpg"] {
-    border-color: #3185a6;
 }
 
 .card-heading h2 {
