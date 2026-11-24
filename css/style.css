@@ -42,8 +42,9 @@ main {
     padding: 20px 16px;
 }
 
-/* L'altezza minima lascia crescere le card quando il testo va a capo. */
-article {
+/* > seleziona solo gli article figli diretti di main: le quattro schede.
+   L'altezza minima lascia crescere le card quando il testo va a capo. */
+main > article {
     min-height: 200px;
     min-width: 0;
     overflow-wrap: break-word;
@@ -53,12 +54,25 @@ article {
     border-radius: 6px;
 }
 
+/* :first-child seleziona la scheda che è il primo elemento dentro main.
+   Attualmente è il Fender; cambiando l'ordine, il bordo segue la prima scheda. */
+main > article:first-child {
+    border-color: #3185a6;
+}
+
+/* :hover si attiva quando il puntatore è sopra una scheda.
+   A parità di specificità, questa regola successiva prevale anche sulla prima. */
+main > article:hover {
+    border-color: #2c3e50;
+}
+
 .card-heading {
     margin-bottom: 12px;
 }
 
-/* Una fascia orizzontale uniforme mostra tutto lo strumento. */
-.card-heading img {
+/* Seleziona solo le immagini figlie dirette di un elemento .card-heading.
+   Una fascia orizzontale uniforme mostra tutto lo strumento. */
+.card-heading > img {
     display: block;
     width: 100%;
     height: auto;
@@ -100,7 +114,7 @@ footer {
         gap: 24px;
     }
 
-    article {
+    main > article {
         padding: 20px;
     }
 }
