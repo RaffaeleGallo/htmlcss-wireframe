@@ -46,7 +46,7 @@ main {
 
 /* > seleziona solo gli article figli diretti di main: le quattro schede.
    L'altezza minima lascia crescere le card quando il testo va a capo. */
-main > article {
+main>article {
     /* Ogni scheda aumenta il contatore di uno. */
     counter-increment: bass;
     min-height: 200px;
@@ -62,32 +62,32 @@ main > article {
    :focus-within evidenzia la scheda quando un elemento al suo interno
    (qui il link del produttore) riceve il focus, ad esempio tramite Tab.
    Le virgole raggruppano i selettori di scheda e immagine nei due stati. */
-main > article:hover,
-main > article:hover .card-heading > img,
-main > article:focus-within,
-main > article:focus-within .card-heading > img {
+main>article:hover,
+main>article:hover .card-heading>img,
+main>article:focus-within,
+main>article:focus-within .card-heading>img {
     border-color: #2c3e50;
 }
 
 /* + seleziona la descrizione subito dopo l'intestazione della scheda. */
-.card-heading + p {
+.card-heading+p {
     margin-top: 12px;
 }
 
 /* ::first-letter evidenzia l'iniziale della descrizione. */
-.card-heading + p::first-letter {
+.card-heading+p::first-letter {
     color: #246580;
     font-weight: bold;
 }
 
 /* ~ raggiunge il link anche se dopo l'intestazione c'è la descrizione. */
-.card-heading ~ .product-link {
+.card-heading~.product-link {
     margin-top: 16px;
 }
 
 /* Seleziona solo le immagini figlie dirette di un elemento .card-heading.
    Una fascia orizzontale uniforme mostra tutto lo strumento. */
-.card-heading > img {
+.card-heading>img {
     display: block;
     width: 100%;
     height: auto;
@@ -101,7 +101,7 @@ main > article:focus-within .card-heading > img {
 
 /* ^= controlla il prefisso di src e *= cerca la finitura nel nome del file.
    Il ritaglio si applica alle due foto DarkRay Gold Bar. */
-.card-heading > img[src^="images/darkray-"][src*="-gold-bar"] {
+.card-heading>img[src^="images/darkray-"][src*="-gold-bar"] {
     object-fit: cover;
 }
 
@@ -113,13 +113,13 @@ main > article:focus-within .card-heading > img {
 
 /* ::before mostra il numero prima del titolo, seguendo l'ordine dell'HTML.
    decimal-leading-zero produce 01, 02, 03... */
-.card-heading > h2::before {
+.card-heading>h2::before {
     content: counter(bass, decimal-leading-zero) " · ";
     color: #246580;
 }
 
 /* ~= cerca la parola intera "cinque" tra i valori di data-gear. */
-main > article[data-gear~="cinque"] .card-heading > h2::before {
+main>article[data-gear~="cinque"] .card-heading>h2::before {
     color: #704080;
 }
 
@@ -209,7 +209,7 @@ main a::selection {
         gap: 24px;
     }
 
-    main > article {
+    main>article {
         padding: 20px;
     }
 }
